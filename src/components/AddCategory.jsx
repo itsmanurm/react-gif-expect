@@ -9,8 +9,9 @@ export const AddCategory = ({ onNewCategory }) => {
         setInputValue(event.target.value);
     }
 
-    const onSubmit = () => {
-        event.preventDefault();
+
+    const onSubmit = () => 
+        event.preventDefault(); //evita el refrezco de la pagina
         if( inputValue.trim().length <= 1 )return;
         //setCategories((categories) => [inputValue,...categories]);
         onNewCategory( inputValue.trim() );
@@ -18,7 +19,9 @@ export const AddCategory = ({ onNewCategory }) => {
     }
 
   return (
-    <form onSubmit={onSubmit}>
+
+    <form onSubmit={onSubmit}>  
+     {/* para que se refresque cuando preciona enter */}
     <input
         type='text'
         placeholder='Buscar gif'
